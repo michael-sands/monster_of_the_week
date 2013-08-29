@@ -4,20 +4,13 @@
 
 @import "bootstrap";
 
-//@mixin motw-title-font
-//{
-//  font-family: 3rdMan;
-//  src: url('./3rd Man.otf');
-//}
+@font-face {
+  font-family: 3rdMan;
+  src: url("3rd Man.otf");
+}
 
-//.motw {
-//  h2 {
-//    @include motw-title-font;
-//  }
-//}
+@import url(use.edgefonts.net/de-walpergens-pica.js);
 
-
-@import "bootstrap";
 
 /* mixins, variables, etc. */
 
@@ -65,14 +58,16 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
-  margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 15px;
   text-align: center;
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.5em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 15px;
   text-align: center;
   font-weight: normal;
   color: $grayLight;
@@ -137,4 +132,14 @@ footer {
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
+}
+
+.motw {
+  h1 {
+    font-family: de-walpergens-pica, serif;
+  }
+  
+  h2 {
+    font-family: de-walpergens-pica, serif;
+  }
 }
