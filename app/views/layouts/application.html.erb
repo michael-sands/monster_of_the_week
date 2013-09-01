@@ -14,7 +14,12 @@
       <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
       <% end %>
-      <%= yield %>
+      <div class="row">
+        <div class="span9">
+          <%= yield %>
+        </div>
+        <%= render 'shared/sidebar' %>
+      </div>
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
     </div>
