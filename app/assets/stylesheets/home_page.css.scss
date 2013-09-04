@@ -50,6 +50,7 @@ textarea {
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: de-walpergens-pica, serif;
   margin-left: 30px;
   margin-right: 30px;  
   line-height: 1;
@@ -88,14 +89,13 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: white;
-  text-transform: uppercase;
+  color: tomato;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
   &:hover {
-    color: white;
+    color: red;
     text-decoration: none;
   }
 }
@@ -135,12 +135,8 @@ footer {
   @include box_sizing;
 }
 
+/* Monster of the Week branding-specific */
+
 .motw {
-  h1 {
-    font-family: de-walpergens-pica, serif;
-  }
-  
-  h2 {
-    font-family: de-walpergens-pica, serif;
-  }
+// nothing right now
 }

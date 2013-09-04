@@ -6,11 +6,15 @@ MonsterOfTheWeek::Application.routes.draw do
 
   root "home_page#home"
   
-  match '/signup',  to: 'users#new',         via: 'get'
-  match '/signin',  to: 'sessions#new',      via: 'get'
-  match '/signout', to: 'sessions#destroy',  via: 'delete'  
-  match '/about',   to: 'home_page#about',   via: 'get'
-  match '/contact', to: 'home_page#contact', via: 'get'
-  match '/news',    to: 'home_page#news',    via: 'get'
+  match '/signup',     to: 'users#new',         via: 'get'
+  match '/signin',     to: 'sessions#new',      via: 'get'
+  match '/signout',    to: 'sessions#destroy',  via: 'delete'  
+  match '/about',      to: 'home_page#about',   via: 'get'
+  match '/contact',    to: 'home_page#contact', via: 'get'
+  match '/news',       to: 'home_page#news',    via: 'get'
+  match '/files',      to: 'files#downloads',   via: 'get'
+  match '/addfile',    to: 'files#new',         via: 'get'
+  match '/updatefile', to: 'files#edit',        via: 'get'
+  match '/deletefile', to: 'files#destroy',     via: 'delete'
   
 end
