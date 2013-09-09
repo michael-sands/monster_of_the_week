@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   end
   
   def index
-    #@users = User.paginate(page: params[:page])
+    # list users
   end
   
   def destroy
@@ -57,6 +57,10 @@ class UsersController < ApplicationController
       flash[:success] = "User destroyed."
     end
     redirect_to users_url
+  end
+  
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
   end
   
   private
@@ -71,7 +75,4 @@ class UsersController < ApplicationController
       redirect_to(root_url) unless current_user?(@user)
     end
     
-    def admin_user
-      redirect_to(root_url) unless current_user.admin?
-    end
 end

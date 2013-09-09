@@ -7,7 +7,7 @@ gem 'bootstrap-sass', '2.3.2.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.1.2'
-#gem 'will-paginate', '0.0.9'
+gem 'will_paginate'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

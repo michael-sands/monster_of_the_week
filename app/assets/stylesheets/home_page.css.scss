@@ -4,13 +4,7 @@
 
 @import "bootstrap";
 
-@font-face {
-  font-family: 3rdMan;
-  src: url("3rd Man.otf");
-}
-
 @import url(use.edgefonts.net/de-walpergens-pica.js);
-
 
 /* mixins, variables, etc. */
 
@@ -38,6 +32,8 @@ section {
 
 textarea {
   resize: vertical;
+  width: 75%;
+  height: 10em;
 }
 
 .center {

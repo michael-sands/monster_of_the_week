@@ -1,4 +1,6 @@
 class FilesController < ApplicationController
+  before_action :signed_in_user
+  
   def downloads
   end
   
