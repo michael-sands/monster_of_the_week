@@ -1,0 +1,5 @@
+<% @newsitems.each do |n| %>
+  <%= will_paginate @newsitems %>
+  <h2><%= n.title %></h2>
+  <p><%= n.body %></p>
+<% end %>  
