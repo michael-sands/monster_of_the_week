@@ -150,6 +150,11 @@ footer {
   @include box_sizing;
 }
 
+.byline {
+  p {
+    font-size: 0.7 em;
+  }
+}
 /* Monster of the Week branding-specific */
 
 .motw {

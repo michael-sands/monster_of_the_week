@@ -11,8 +11,4 @@ class HomePageController < ApplicationController
   def contact
     # nothing special to do
   end
-  
-  def news
-  end
-  
 end
