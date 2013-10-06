@@ -13,7 +13,7 @@ MonsterOfTheWeek::Application.routes.draw do
   match '/signout',    to: 'sessions#destroy',  via: 'delete'  
   match '/about',      to: 'home_page#about',   via: 'get'
   match '/contact',    to: 'home_page#contact', via: 'get'
-  match '/articles',   to: 'articles#index',    via: 'get'
+#  match '/articles',   to: 'articles#index',    via: 'get'
 #  match '/news/new',   to: 'articles#new',      via: 'get'
 #  match '/news/edit',  to: 'news#edit',         via: 'get'
 #  match '/news/delete', to: 'news#destroy',     via: 'delete'
