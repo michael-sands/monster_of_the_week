@@ -13,7 +13,7 @@ FactoryGirl.define do
   
   factory :article do
     sequence(:title) { |n| "News Article #{n}" }
-    sequence(:body) { |n| "News article #{n}. Here is a new announcement!" }
+    sequence(:body) { |n| "Article 2: #{Faker::Lorem.paragraphs(2)}" }
     user
   end
   

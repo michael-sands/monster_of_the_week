@@ -3,7 +3,7 @@ MonsterOfTheWeek::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :articles, only: [ :new, :create, :index ]
+  resources :articles
   resources :files
 
   root "home_page#home"
@@ -16,7 +16,7 @@ MonsterOfTheWeek::Application.routes.draw do
 #  match '/articles',   to: 'articles#index',    via: 'get'
 #  match '/news/new',   to: 'articles#new',      via: 'get'
 #  match '/news/edit',  to: 'news#edit',         via: 'get'
-#  match '/news/delete', to: 'news#destroy',     via: 'delete'
+#  match '/articles/delete', to: 'articles#destroy',     via: 'delete'
 #  match '/files',      to: 'files#downloads',   via: 'get'
 #  match '/addfile',    to: 'files#new',         via: 'get'
 #  match '/updatefile', to: 'files#edit',        via: 'get'

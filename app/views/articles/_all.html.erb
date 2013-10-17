@@ -1,0 +1,7 @@
+<%= will_paginate @articles, class: "pagination" %>
+<% @articles.each do |n| %>
+  <%= render 'articles/article', article: n %>
+  <%= render 'shared/article_delete_link', article: n %>
+  <%= render 'shared/article_edit_link', article: n %>
+<% end %>  
+<%= will_paginate @articles, class: "pagination" %>

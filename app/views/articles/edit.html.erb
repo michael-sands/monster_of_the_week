@@ -1,0 +1,12 @@
+<% provide(:title, 'Edit News Article') %>
+<h1>Edit News Article</h1>
+<%= form_for(@article) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "input-large" %>
+    
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+    
+  <%= f.submit "Publish Article", class: "btn btn-large btn-primary" %>
+<% end %>
