@@ -11,18 +11,22 @@ class ArticlesController < ApplicationController
   end
     
   def new
+    if !current_user.admin_user
+      redirect_to articles_path
+    end
     @article = Article.new
   end
 
   def create
     if !current_user.admin_user
       redirect_to root_url
+    else 
+      @article = current_user.articles.build(article_params)
+      if @article.save 
+        flash[:success] = "Article created"
+        redirect_to articles_path
+      end   
     end
-    @article = current_user.articles.build(article_params)
-    if @article.save 
-      flash[:success] = "Article created"
-      redirect_to articles_path
-    end   
   end
   
   def edit
