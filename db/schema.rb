@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130908214832) do
+ActiveRecord::Schema.define(version: 20131104011051) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -23,12 +23,31 @@ ActiveRecord::Schema.define(version: 20130908214832) do
 
   add_index "articles", ["user_id", "created_at"], name: "index_articles_on_user_id_and_created_at"
 
-  create_table "files", force: true do |t|
+  create_table "downloadable_files", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "display_name", default: "name"
-    t.integer  "access_id",    default: 0
+    t.string   "display_name"
+    t.integer  "access_id"
+    t.string   "the_file_file_name"
+    t.string   "the_file_content_type"
+    t.integer  "the_file_file_size"
+    t.datetime "the_file_updated_at"
+  end
+
+  create_table "file_bundles", force: true do |t|
+    t.integer  "file_id"
+    t.integer  "file_access_id"
+    t.boolean  "public",         default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "file_permissions", force: true do |t|
+    t.integer  "file_bundle_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

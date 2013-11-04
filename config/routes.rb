@@ -4,7 +4,7 @@ MonsterOfTheWeek::Application.routes.draw do
   resources :users, only: [ :new, :edit, :show, :update ]
   resources :sessions, only: [:new, :create, :destroy]
   resources :articles
-  resources :files
+  resources :downloadable_files
 
   root "home_page#home"
   
