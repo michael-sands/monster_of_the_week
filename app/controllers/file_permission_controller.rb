@@ -1,0 +1,2 @@
+class FilePermissionController < ApplicationController
+end

@@ -1,0 +1,26 @@
+<% provide(:title, 'Add File') %>
+<h1>Add File</h1>
+<%= form_for(@file) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  
+  <div class="row">
+  <%= f.label "Select file", :class => "span2" %>    
+  <%= f.file_field :the_file, :class => "span4" %>
+  </div>
+  
+  <div class="row">
+  <%= f.label :display_name, :class => "span2" %>
+  <%= f.text_field :display_name, :class => "span4" %>
+  </div>
+  
+  <div class="row">
+  <%= f.label :public, :class => "span2" %>
+  <%= f.check_box :public, :class => "span4" %>
+  </div>
+  
+  <div class="row">
+    <div class="span2">
+    </div>
+    <%= f.submit "Upload File", class: "btn btn-large btn-primary span4" %>
+  </div>
+<% end %>
