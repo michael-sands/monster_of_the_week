@@ -1,4 +1,4 @@
-<% if current_user?(article.user) %>
+<% if current_user != nil and current_user?(article.user) %>
   <%= link_to "Delete Article", article, method: :delete,
                                  data: { confirm: "Are you sure you want to delete this article?" },
                                  title: article.title, class: "btn btn-small" %>

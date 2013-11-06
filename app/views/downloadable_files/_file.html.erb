@@ -1,3 +1,7 @@
-<%= form_for @file do |f| %>
-  <%= render 'fields', f: f %>
+<% if @file %>
+  <%= form_for @file do |f| %>
+    <%= render 'fields', f: f %>
+  <% end %>
+<% else %>
+  <p>No files to download</p>
 <% end %>
