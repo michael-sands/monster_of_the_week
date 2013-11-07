@@ -5,6 +5,7 @@
       <nav>
         <ul class="nav pull-right">
           <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Downloads", downloadable_files_path %></li>
           <li><%= link_to "News", articles_path %></li>
           <% if signed_in? %>
             <li><%= link_to "Details", edit_user_path(current_user) %></li>
