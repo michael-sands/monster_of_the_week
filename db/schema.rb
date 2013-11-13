@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(version: 20131104011051) do
 
   create_table "downloadable_files", force: true do |t|
     t.string   "name"
+    t.boolean  "public"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "display_name"
-    t.boolean  "public"
     t.string   "the_file_file_name"
     t.string   "the_file_content_type"
     t.integer  "the_file_file_size"
