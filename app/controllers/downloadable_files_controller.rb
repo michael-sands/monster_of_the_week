@@ -17,12 +17,31 @@ class DownloadableFilesController < ApplicationController
         flash[:success] = "File uploaded"
         redirect_to downloadable_files_path
       else 
-        flash[:error] = "WTF "
+        flash[:error] = "Could not upload file."
       end   
     end
   end
   
   def edit
+    @file = DownloadableFile.find(params[:id])
+  end
+  
+  def update
+    if !current_user.admin_user
+      redirect_to root_url
+    else 
+      @file = DownloadableFile.find(params[:id])
+      if params[:downloadable_file][:the_file] != nil
+        @file.the_file = params[:downloadable_file][:the_file]
+      end
+      
+      if @file.update_attributes(downloadable_file_params)
+        flash[:success] = "File updated"
+        redirect_to downloadable_files_path
+      else
+        flash[:error] = "Could not update file."
+      end   
+    end
   end
   
   def destroy
