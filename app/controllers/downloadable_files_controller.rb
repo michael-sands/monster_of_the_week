@@ -11,9 +11,13 @@ class DownloadableFilesController < ApplicationController
     if !current_user.admin_user
       redirect_to root_url
     else 
-      if @file.save 
-        flash[:success] = "File uploaded created"
-        redirect_to files_path
+      @file = DownloadableFile.create(downloadable_file_params)
+      @file.the_file = params[:downloadable_file][:the_file]
+      if @file.save!
+        flash[:success] = "File uploaded"
+        redirect_to downloadable_files_path
+      else 
+        flash[:error] = "WTF "
       end   
     end
   end
@@ -35,6 +39,6 @@ class DownloadableFilesController < ApplicationController
 private
   
     def downloadable_file_params
-      params.require(:downloadable_file).permit(:name, :display_name, :the_file)
+      params.require(:downloadable_file).permit(:name, :display_name, :the_file, :public)
     end
 end
