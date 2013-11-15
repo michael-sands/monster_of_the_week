@@ -1,0 +1,5 @@
+<% if current_user != nil and current_user.admin_user %>
+  <%= link_to "Delete file", file, method: :delete,
+                                data: { confirm: "Are you sure you want to delete this file?" },
+                                title: file.display_name, class: "btn btn-small" %>
+<% end %>
