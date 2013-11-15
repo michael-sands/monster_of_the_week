@@ -45,6 +45,13 @@ class DownloadableFilesController < ApplicationController
   end
   
   def destroy
+    if !current_user.admin_user
+      redirect_to root_url
+    else 
+      @file = DownloadableFile.find(params[:id])
+      @file.destroy
+      redirect_to downloadable_files_path
+    end
   end
   
   def show

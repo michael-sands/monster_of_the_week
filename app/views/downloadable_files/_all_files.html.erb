@@ -1,5 +1,7 @@
 <div class="span6 offset3">
   <%= form_for @files do |f| %>
-    <%= render 'fields', f: f %>
+    <%= render 'fields', f: f %>  
+    <%= render 'downloadable_files/file_delete_link', file: f %>
+    <%= render 'downloadable_files/file_edit_link', file: f %>
   <% end %>
 </div>

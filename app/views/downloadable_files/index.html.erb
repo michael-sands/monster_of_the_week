@@ -1,8 +1,26 @@
 <% provide(:title, 'Downloads') %>
-<h1>Downloads</h1>
+<div class="row"><h1>Downloads</h1>
 <p><%= render 'shared/downloadable_file_new_link' %></p>
 <%= will_paginate @files, class: "pagination" %>
+<% dark_row_next = true %>
 <% @files.each do |f| %>
-  <%= render 'downloadable_files/file', file: f %>
+  <% if dark_row_next %>
+    <div class="row file-table-dark">
+    <% dark_row_next = false %>
+  <% else %>
+    <div class="row file-table-light">
+    <% dark_row_next = true %>
+  <% end %>
+  
+    <div class="span4">
+      <%= render 'downloadable_files/file', file: f %>
+    </div>
+    <div class="span2">
+      <%= render 'downloadable_files/file_edit_link', file: f %>
+    </div>
+    <div class="span2">
+      <%= render 'downloadable_files/file_delete_link', file: f %>
+    </div>
+  </div>
 <% end %>  
-<%= will_paginate @files, class: "pagination" %>
+<%= will_paginate @files, class: "pagination" %></div>
